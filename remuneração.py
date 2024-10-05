@@ -39,10 +39,13 @@ def calculaIRPF(salarioDescInss):
 
     return salarioLiquido
 
-salarioDescInss = calculaINSS(salarioBruto)
-salarioLiquido = calculaIRPF(salarioDescInss)
-fgts = salarioBruto * 0.08
+try:
+    salarioDescInss = calculaINSS(salarioBruto)
+    salarioLiquido = calculaIRPF(salarioDescInss)
+    fgts = salarioBruto * 0.08
 
-print(f'Salario Líquido: {salarioLiquido:.2f}')
-print(f'Parcela do FTGS: {fgts}')
+    print(f'Salario Líquido: {salarioLiquido:.2f}')
+    print(f'Parcela do FTGS: {fgts}')
 
+except: 
+    print('Problema na conversão de valor do salario')
